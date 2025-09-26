@@ -1342,6 +1342,9 @@ libraries = {
 }
 autoplay = "move"
 
+[node name="Coin7" parent="Platform" instance=ExtResource("8_4mrxx")]
+position = Vector2(-0.5974121, -21)
+
 [node name="Border" type="StaticBody2D" parent="."]
 position = Vector2(-195, -55)
 
@@ -1363,14 +1366,6 @@ collision_mask = 3
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
 shape = SubResource("WorldBoundaryShape2D_qfnet")
 
-[node name="Coin" parent="." instance=ExtResource("8_4mrxx")]
-
-[node name="Coin2" parent="." instance=ExtResource("8_4mrxx")]
-position = Vector2(76, 7)
-
-[node name="Coin3" parent="." instance=ExtResource("8_4mrxx")]
-position = Vector2(40, 1)
-
 [node name="ScoreLabel" type="Label" parent="."]
 unique_name_in_owner = true
 anchors_preset = -1
@@ -1382,4 +1377,26 @@ offset_left = -0.52000046
 offset_top = 0.24800491
 offset_right = 39.48
 offset_bottom = 23.248005
-text = "Core"
+
+[node name="Coins" type="Node" parent="."]
+
+[node name="Coin" parent="Coins" instance=ExtResource("8_4mrxx")]
+position = Vector2(33, 28)
+
+[node name="Coin2" parent="Coins" instance=ExtResource("8_4mrxx")]
+position = Vector2(430, -13)
+
+[node name="Coin3" parent="Coins" instance=ExtResource("8_4mrxx")]
+position = Vector2(273, -1)
+
+[node name="Coin4" parent="Coins" instance=ExtResource("8_4mrxx")]
+position = Vector2(577, -63)
+
+[node name="Coin5" parent="Coins" instance=ExtResource("8_4mrxx")]
+position = Vector2(960, -19)
+
+[node name="Coin7" parent="Coins" instance=ExtResource("8_4mrxx")]
+position = Vector2(1328, -14)
+
+[node name="Coin6" parent="Coins" instance=ExtResource("8_4mrxx")]
+position = Vector2(824, -35)

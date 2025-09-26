@@ -20,10 +20,12 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		
 	if direction < 0:
 		animated_sprite_2d.flip_h = true
 	if direction > 0:
 		animated_sprite_2d.flip_h = false
+		
 	if is_on_floor():
 		if direction == 0:
 			animated_sprite_2d.play("idle")
@@ -33,3 +35,8 @@ func _physics_process(delta: float) -> void:
 		animated_sprite_2d.play("jump")
 
 	move_and_slide()
+
+
+func die():
+	$DeathMenu.visible = true
+	get_tree().paused = true

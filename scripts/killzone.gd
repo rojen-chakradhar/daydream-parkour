@@ -8,5 +8,4 @@ func _on_body_entered(body: Node2D) -> void:
 	
 
 func _on_timer_timeout() -> void:
-	#get_tree().reload_current_scene()
-	Engine.time_scale = 0
+	get_tree().reload_current_scene()
