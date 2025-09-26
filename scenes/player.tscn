@@ -179,10 +179,8 @@ script = ExtResource("1_g2els")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_tuyoq")
-animation = &"die"
+animation = &"idle"
 autoplay = "idle"
-frame = 2
-frame_progress = 0.007699076
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-9, 7)
