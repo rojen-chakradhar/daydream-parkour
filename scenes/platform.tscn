@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dlsol3q4rywbv"]
+
+[ext_resource type="Texture2D" uid="uid://bt2h0g3t7ybcp" path="res://assets/craftpix-net-861263-free-pirate-bay-tileset-pixel-art-for-cyberpunk/3 Objects/2 Tower/3.png" id="1_ba0x2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nlgqw"]
+size = Vector2(62, 16)
+
+[node name="Platform" type="AnimatableBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ba0x2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_nlgqw")
