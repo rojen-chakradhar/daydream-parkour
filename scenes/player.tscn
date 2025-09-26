@@ -1,33 +1,35 @@
 [gd_scene load_steps=28 format=3 uid="uid://xox4pnp4a2v"]
 
 [ext_resource type="Script" uid="uid://bcdmoaqfd28yq" path="res://scripts/player.gd" id="1_g2els"]
-[ext_resource type="Texture2D" uid="uid://cqq3auolil4t2" path="res://assets/craftpix-net-856554-free-3-cyberpunk-characters-pixel-art/2 Punk/Punk_death.png" id="2_qlg0r"]
 [ext_resource type="Texture2D" uid="uid://qrwcxywunn3u" path="res://assets/craftpix-net-856554-free-3-cyberpunk-characters-pixel-art/2 Punk/Punk_run.png" id="3_dqkch"]
 [ext_resource type="Texture2D" uid="uid://da66sxitmthay" path="res://assets/craftpix-net-856554-free-3-cyberpunk-characters-pixel-art/2 Punk/Punk_idle.png" id="3_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://b4gx22i4w0se0" path="res://assets/craftpix-net-856554-free-3-cyberpunk-characters-pixel-art/2 Punk/Punk_jump.png" id="3_qlg0r"]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dqkch"]
+load_path = "res://.godot/imported/Punk_death.png-2c548cdfb37d8787dd2a299ac2fbbda1.ctex"
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_4r5pv"]
-atlas = ExtResource("2_qlg0r")
+atlas = SubResource("CompressedTexture2D_dqkch")
 region = Rect2(0, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_60mlk"]
-atlas = ExtResource("2_qlg0r")
+atlas = SubResource("CompressedTexture2D_dqkch")
 region = Rect2(48, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i4ail"]
-atlas = ExtResource("2_qlg0r")
+atlas = SubResource("CompressedTexture2D_dqkch")
 region = Rect2(96, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a38lo"]
-atlas = ExtResource("2_qlg0r")
+atlas = SubResource("CompressedTexture2D_dqkch")
 region = Rect2(144, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4ni07"]
-atlas = ExtResource("2_qlg0r")
+atlas = SubResource("CompressedTexture2D_dqkch")
 region = Rect2(192, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l71n6"]
-atlas = ExtResource("2_qlg0r")
+atlas = SubResource("CompressedTexture2D_dqkch")
 region = Rect2(240, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tuyoq"]
@@ -183,5 +185,5 @@ animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-9, 7)
+position = Vector2(-1, 7)
 shape = SubResource("RectangleShape2D_fjrip")

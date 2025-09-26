@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://cmqv45lei2opj"]
+[gd_scene load_steps=23 format=3 uid="uid://cmqv45lei2opj"]
 
 [ext_resource type="Script" uid="uid://comm1wc7a5vrt" path="res://scripts/game_manager.gd" id="1_7r4gi"]
 [ext_resource type="PackedScene" uid="uid://xox4pnp4a2v" path="res://scenes/player.tscn" id="1_nnsk1"]
@@ -1306,32 +1306,25 @@ sources/4 = SubResource("TileSetAtlasSource_qfnet")
 sources/5 = SubResource("TileSetAtlasSource_i7141")
 sources/7 = SubResource("TileSetAtlasSource_jhx03")
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qfnet"]
-distance = -165.0
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4wyf3"]
-normal = Vector2(0.9999849, -0.0054944227)
-distance = 83.0
-
 [sub_resource type="Animation" id="Animation_4mrxx"]
 resource_name = "move"
 length = 4.0
 loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
-tracks/0/enabled = true
+tracks/0/enabled = false
 tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 2, 4),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 2, 2.01, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(545, 0), Vector2(545, -48), Vector2(545, 0)]
+"values": [Vector2(1120, 1), Vector2(545, -48), Vector2(545, -47.263), Vector2(1361, -1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
-tracks/1/enabled = true
+tracks/1/enabled = false
 tracks/1/path = NodePath(".:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
@@ -1341,25 +1334,49 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(1120, 1), Vector2(1360, 0)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1120, 0), Vector2(1361, -1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Platform:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.95, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(543, -1), Vector2(545, -48), Vector2(541, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_7r4gi"]
-length = 2.0
+length = 4.0
 loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
-tracks/0/enabled = true
+tracks/0/enabled = false
 tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.98),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 1.98, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(542, 0), Vector2(542, 0)]
+"values": [Vector2(544, 0), Vector2(542, 0), Vector2(546, -49)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
-tracks/1/enabled = true
+tracks/1/enabled = false
 tracks/1/path = NodePath(".:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
@@ -1369,6 +1386,30 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(1120, 1)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1120, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Platform:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(543, -1)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_w7kh3"]
 _data = {
@@ -1376,65 +1417,12 @@ _data = {
 &"move": SubResource("Animation_4mrxx")
 }
 
-[sub_resource type="GDScript" id="GDScript_e3hyu"]
-script/source = "extends Area2D
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qfnet"]
+distance = -165.0
 
-func _ready():
-	connect(\"body_entered\", Callable(self, \"_on_body_entered\"))
-
-func _on_body_entered(body):
-	if body.is_in_group(\"Player\"):
-		get_tree().change_scene(\"res://scenes/FinishMenu.tscn\")
-"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_q5onr"]
-load_path = "res://.godot/imported/flag animation.png-313d170b723c46c4765cc513b6631ba4.ctex"
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jhx03"]
-atlas = SubResource("CompressedTexture2D_q5onr")
-region = Rect2(0, 0, 60, 60)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_o8fc1"]
-atlas = SubResource("CompressedTexture2D_q5onr")
-region = Rect2(60, 0, 60, 60)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xo05s"]
-atlas = SubResource("CompressedTexture2D_q5onr")
-region = Rect2(120, 0, 60, 60)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dss4m"]
-atlas = SubResource("CompressedTexture2D_q5onr")
-region = Rect2(180, 0, 60, 60)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7t5mc"]
-atlas = SubResource("CompressedTexture2D_q5onr")
-region = Rect2(240, 0, 60, 60)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_lakw3"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jhx03")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_o8fc1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xo05s")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dss4m")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7t5mc")
-}],
-"loop": true,
-"name": &"default",
-"speed": 10.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pm21f"]
-size = Vector2(20.75, 37.5)
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4wyf3"]
+normal = Vector2(0.9999849, -0.0054944227)
+distance = 83.0
 
 [node name="World" type="Node"]
 
@@ -1456,10 +1444,37 @@ layer_2/tile_data = PackedInt32Array(262125, 524289, 2, 327661, 524289, 3, 26212
 position = Vector2(-43, 25)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+scale = Vector2(0.5, 0.5)
 zoom = Vector2(3, 3)
-limit_bottom = 130
+limit_left = -9999807
+limit_top = -9999887
+limit_right = 10000193
+limit_bottom = 243
 limit_smoothed = true
 position_smoothing_enabled = true
+
+[node name="Platforms" type="Node" parent="."]
+
+[node name="Platform" parent="Platforms" instance=ExtResource("6_4mrxx")]
+position = Vector2(543, -1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/Platform"]
+libraries = {
+&"": SubResource("AnimationLibrary_w7kh3")
+}
+autoplay = "move"
+
+[node name="Platform2" parent="Platforms" instance=ExtResource("6_4mrxx")]
+position = Vector2(1120, 0)
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="Platforms/Platform2"]
+libraries = {
+&"": SubResource("AnimationLibrary_w7kh3")
+}
+autoplay = "move"
+
+[node name="Coin7" parent="Platforms/Platform2" instance=ExtResource("8_4mrxx")]
+position = Vector2(-0.5974121, -21)
 
 [node name="Killzone" parent="." instance=ExtResource("5_71j4m")]
 collision_mask = 3
@@ -1507,10 +1522,12 @@ anchor_left = 0.010000001
 anchor_top = -0.076000005
 anchor_right = 0.010000001
 anchor_bottom = -0.076000005
-offset_left = -0.52000046
-offset_top = 0.24800491
-offset_right = 39.48
-offset_bottom = 23.248005
+offset_left = 3141.48
+offset_top = 22.248005
+offset_right = 3261.48
+offset_bottom = 64.248
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("11_q5onr")
 
 [node name="Controls" type="Label" parent="Labels"]
 texture_filter = 1
@@ -1535,42 +1552,3 @@ theme_override_colors/font_color = Color(0.9137255, 0.8352941, 0.007843138, 1)
 theme_override_fonts/font = ExtResource("11_q5onr")
 theme_override_font_sizes/font_size = 8
 text = "⚠️ Dont walk in broken paltform"
-
-[node name="Platforms" type="Node" parent="."]
-
-[node name="Platform" parent="Platforms" instance=ExtResource("6_4mrxx")]
-position = Vector2(1120, 1)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/Platform"]
-libraries = {
-&"": SubResource("AnimationLibrary_w7kh3")
-}
-autoplay = "move"
-
-[node name="Platform2" parent="Platforms" instance=ExtResource("6_4mrxx")]
-position = Vector2(1120, 1)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/Platform2"]
-libraries = {
-&"": SubResource("AnimationLibrary_w7kh3")
-}
-autoplay = "move"
-
-[node name="Coin7" parent="Platforms/Platform2" instance=ExtResource("8_4mrxx")]
-position = Vector2(-0.5974121, -21)
-
-[node name="Flag" type="Area2D" parent="."]
-script = SubResource("GDScript_e3hyu")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Flag"]
-position = Vector2(3219.5, 3.5)
-scale = Vector2(0.81666666, 0.81666666)
-sprite_frames = SubResource("SpriteFrames_lakw3")
-autoplay = "default"
-frame_progress = 0.27829614
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Flag"]
-position = Vector2(3211.625, 7.75)
-shape = SubResource("RectangleShape2D_pm21f")
-
-[connection signal="body_entered" from="Flag" to="Flag" method="_on_body_entered"]
