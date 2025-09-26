@@ -77,7 +77,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_ur7pv")
 }],
 "loop": true,
-"name": &"idle2",
+"name": &"idle",
 "speed": 10.0
 }, {
 "frames": [{
@@ -117,7 +117,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_f1ej7")
 }],
 "loop": true,
-"name": &"right",
+"name": &"walk",
 "speed": 10.0
 }]
 
@@ -130,8 +130,8 @@ script = ExtResource("1_g2els")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_tuyoq")
-animation = &"jump"
-autoplay = "idle2"
+animation = &"walk"
+autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-9, 7)
