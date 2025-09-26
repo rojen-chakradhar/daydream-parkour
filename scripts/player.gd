@@ -35,8 +35,3 @@ func _physics_process(delta: float) -> void:
 		animated_sprite_2d.play("jump")
 
 	move_and_slide()
-
-
-func die():
-	$DeathMenu.visible = true
-	get_tree().paused = true
