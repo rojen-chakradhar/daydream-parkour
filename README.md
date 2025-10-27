@@ -1,7 +1,8 @@
-# 💤 Daydream Parkour  
+# Daydream Parkour  
+![Cover Image](https://img.itch.zone/aW1nLzIzMzkzODE4LnBuZw==/315x250%23c/5COdt0.png)
 
 **A fast-paced, minimalist parkour platformer built in Godot for the Daydream Hackathon 2025.**  
-🏆 **1st Place Winner — Daydream Hackathon (Kathmandu Chapter)**  
+🏆 **1st Place Winner — Daydream Hackathon (Kathmandu)**  
 
 ---
 
@@ -27,7 +28,6 @@ Built solo in under **6 hours**, it combines speed, simplicity, and clean level 
 
 - ⚡ Minimalist art style with smooth player movement  
 - 🧱 Custom-built parkour levels  
-- 🏁 Finish flag to complete the level  
 - 💀 Death + restart system  
 - 🎵 Simple, atmospheric background track  
 - ⏱️ Lightweight and fast-paced gameplay  
@@ -40,24 +40,8 @@ Built solo in under **6 hours**, it combines speed, simplicity, and clean level 
 |------|----------|
 | **Godot 4.3** | Game engine |
 | **GDScript** | Scripting language |
-| **Aseprite / GIMP** | Sprite & pixel art |
+| **Libresprite** | Sprite & pixel art |
 | **Git + GitHub** | Version control & collaboration |
-
----
-
-## 📦 Folder Structure  
-
-```
-daydream-parkour/
-│
-├── assets/             # Sprites, background, sounds
-├── scenes/             # Player, enemies, collectibles, flag, main
-├── scripts/            # All GDScript files
-├── ui/                 # UI scenes (menu, game over)
-├── main.tscn           # Main scene
-├── main.gd             # Game logic
-└── README.md           # This file
-```
 
 ---
 
@@ -73,15 +57,7 @@ Feel free to explore, learn, or remix with credit.
 This game was made as part of the **Daydream Hackathon 2025** —  
 a 1-day challenge to build a complete playable experience from scratch.  
 
-Even with collapsing builds, endless bugs, and zero sleep,  
+Even with collapsing builds, endless bugs,  
 **Daydream Parkour** somehow clinched the **1st place** 🎉  
 
 > “The game that made me win the hackathon — still can’t believe it.”  
-
----
-
-## 🧩 Links  
-
-- 🎮 [Play on Itch.io](https://rojenrandom.itch.io/daydream-parkour)  
-- 💻 [View Source on GitHub](https://github.com/rojen-chakradhar/daydream-parkour)  
-- 🏆 Event: *Daydream Hackathon 2025 — Kathmandu Chapter*  
