@@ -24,6 +24,18 @@ Built solo in under **6 hours**, it combines speed, simplicity, and clean level 
 
 ---
 
+## 🛠 Intructions
+- Open the github repo.
+- clone the repo.
+- open the files in your godot.
+- click run.
+
+### OR
+- Click the link to itch.io (the game is available publicly in web)
+- click play.
+
+---
+
 ## ✨ Features  
 
 - ⚡ Minimalist art style with smooth player movement  
